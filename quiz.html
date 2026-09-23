@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Mulheres que Fizeram História</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="quiz">
+
+    <button class="botao-ajuda" id="botaoAjuda" aria-label="Abrir ajuda">?</button>
+    <aside class="barra-ajuda" id="barraAjuda">
+        <div class="cabecalho-ajuda"><div><span class="texto-pequeno">MTEC — CIÊNCIA DELAS</span><h2 id="tituloAjuda">Ajuda</h2></div><button class="fechar-ajuda" id="fecharAjuda">×</button></div>
+        <div id="conteudoAjuda"></div>
+    </aside>
+
+    <div class="fundo-site">
+        <header class="cabecalho-site">
+            <a href="inicio.html" class="logo-site"><img src="logo-mtec.png" alt="Logo Ciência Delas"></a>
+            <nav class="menu-site"><a href="inicio.html">Início</a><a href="cientistas.html">Cientistas</a><a class="ativo" href="quiz.html">Quiz</a><a href="jogo.html">Jogo</a><a href="feedback.html">Feedback</a></nav>
+            <div class="usuario-menu"><span id="nomeUsuarioMenu">Visitante</span><button id="botaoSair" class="botao-secundario pequeno">Sair</button></div>
+        </header>
+
+        <main class="area-quiz">
+            <section class="cabecalho-pagina quiz-cabecalho">
+                <div><span class="etiqueta">02 — TESTAR</span><h1>Quanto você<br><span>aprendeu?</span></h1></div>
+                <p>Responda às perguntas sobre as cientistas. Cada questão possui apenas uma alternativa correta.</p>
+            </section>
+
+            <section class="quiz-container" id="quizContainer">
+                <div class="quiz-topo">
+                    <div><span id="numeroQuestao">QUESTÃO 01</span><strong id="contadorQuestao">1 / 10</strong></div>
+                    <div class="barra-progresso"><div id="progressoQuiz"></div></div>
+                </div>
+
+                <div class="quiz-pergunta">
+                    <span class="tema-questao" id="temaQuestao">CIÊNCIA</span>
+                    <h2 id="textoQuestao"></h2>
+                </div>
+
+                <div class="alternativas" id="alternativas"></div>
+
+                <div class="feedback-questao" id="feedbackQuestao"></div>
+
+                <!-- Dica simples para ajudar sem revelar a resposta. -->
+                <button type="button" class="botao-dica" id="botaoDica">Ver dica</button>
+                <div class="dica-questao" id="dicaQuestao"></div>
+
+                <button class="botao-principal botao-proxima" id="botaoProxima" disabled>
+                    <span>Responder</span><span>→</span>
+                </button>
+            </section>
+
+            <section class="resultado-quiz escondido" id="resultadoQuiz">
+                <div class="resultado-icone">✦</div>
+                <span class="etiqueta">QUIZ CONCLUÍDO</span>
+                <h2 id="tituloResultado">Parabéns!</h2>
+                <div class="pontuacao-final"><strong id="pontuacaoFinal">0</strong><span>/ 10</span></div>
+                <p id="textoResultado"></p>
+                <div class="resultado-botoes">
+                    <button class="botao-principal" id="refazerQuiz">Refazer quiz</button>
+                    <a href="jogo.html" class="botao-secundario">Continuar para o jogo →</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="rodape-site">
+            <div>
+                <strong>Mulheres que Fizeram História</strong>
+                <span>MTEC — Ciência Delas</span>
+            </div>
+            <div>
+                <strong>Integrantes</strong>
+                <span>Alexandre Alceu Costa Vale Júnior • Pedro Rodrigues de Oliveira Prates • Guilherme Adolfo Rodrigues Souza</span>
+            </div>
+            <div>
+                <strong>Tema</strong>
+                <span>Mulheres na ciência • 2º TDSA</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

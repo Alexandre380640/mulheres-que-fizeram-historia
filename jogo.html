@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedição Científica | Mulheres que Fizeram História</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="jogo">
+
+    <button class="botao-ajuda" id="botaoAjuda" aria-label="Abrir ajuda">?</button>
+    <aside class="barra-ajuda" id="barraAjuda">
+        <div class="cabecalho-ajuda"><div><span class="texto-pequeno">MTEC — CIÊNCIA DELAS</span><h2 id="tituloAjuda">Ajuda</h2></div><button class="fechar-ajuda" id="fecharAjuda">×</button></div>
+        <div id="conteudoAjuda"></div>
+    </aside>
+
+    <div class="fundo-site">
+        <header class="cabecalho-site">
+            <a href="inicio.html" class="logo-site"><img src="logo-mtec.png" alt="Logo Ciência Delas"></a>
+            <nav class="menu-site"><a href="inicio.html">Início</a><a href="cientistas.html">Cientistas</a><a href="quiz.html">Quiz</a><a class="ativo" href="jogo.html">Jogo</a><a href="feedback.html">Feedback</a></nav>
+            <div class="usuario-menu"><span id="nomeUsuarioMenu">Visitante</span><button id="botaoSair" class="botao-secundario pequeno">Sair</button></div>
+        </header>
+
+        <main class="area-jogo">
+            <section class="cabecalho-pagina jogo-cabecalho">
+                <div><span class="etiqueta">03 — MISSÃO</span><h1>Arquivo<br><span>Científico</span></h1></div>
+                <p>
+                    As descobertas foram espalhadas por três áreas do arquivo. Controle a personagem,
+                    atravesse plataformas, pule obstáculos, recupere os nove registros
+                    e chegue ao final antes que o tempo termine.
+                </p>
+            </section>
+
+            <section class="painel-jogo">
+                <div class="barra-jogo">
+                    <div class="informacao-jogo"><span>PESQUISADORA</span><strong id="nomeJogadorJogo">Visitante</strong></div>
+                    <div class="informacao-jogo"><span>ARQUIVO</span><strong id="contadorDescobertas">0 / 9</strong></div>
+                    <div class="informacao-jogo"><span>PONTOS</span><strong id="pontosJogo">0</strong></div>
+                    <div class="informacao-jogo"><span>TEMPO</span><strong id="tempoJogo">60</strong></div>
+                </div>
+
+                <div class="objetivo-jogo">
+                    <div><span>OBJETIVO</span><strong id="objetivoAtual">Recupere os 9 registros e chegue à bandeira no fim da fase.</strong></div>
+                    <div class="status-combo"><span>VIDAS</span><strong id="comboJogo">3 vidas</strong></div>
+                    <button class="botao-secundario pequeno" id="botaoReiniciarJogo">Reiniciar</button>
+                </div>
+
+                <div class="colecao-jogo" id="colecaoJogo" aria-label="Progresso das cientistas"></div>
+
+                <div class="canvas-jogo-wrapper arquivo-jogo-wrapper">
+                    <canvas id="telaJogo" width="1000" height="560"></canvas>
+                    <div class="mensagem-jogo" id="mensagemJogo">
+                        <div class="mensagem-jogo-caixa">
+                            <span class="etiqueta" id="tituloMensagemJogo">ARQUIVO CIENTÍFICO</span>
+                            <h2 id="textoMensagemJogo">Recupere as nove descobertas.</h2>
+                            <p id="descricaoMensagemJogo">Corra, pule, derrote os obstáculos e atravesse três áreas do arquivo. Use ← → ou A/D para correr e ↑, W ou Espaço para pular.</p>
+                            <button type="button" class="botao-principal" id="botaoMensagemJogo">Iniciar missão</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controles-mobile">
+                    <div><button data-tecla="ArrowLeft">←</button><button data-tecla="ArrowUp">↑</button><button data-tecla="ArrowRight">→</button></div>
+                </div>
+
+                <div class="legenda-jogo arquivo-legenda">
+                    <div><span class="ponto-legenda azul"></span> registro científico</div>
+                    <div><span class="ponto-legenda amarelo"></span> estrela bônus</div>
+                    <div><span class="ponto-legenda vermelho"></span> obstáculo</div>
+                    <div><span class="ponto-legenda laranja"></span> mola de impulso</div>
+                    <div><span class="tecla">← →</span><span class="tecla">A D</span> correr</div>
+                    <div><span class="tecla">↑</span><span class="tecla">W</span><span class="tecla">Espaço</span> pular</div>
+                </div>
+            </section>
+
+            <section class="como-jogar">
+                <div><span class="etiqueta">COMO JOGAR</span><h2>Recupere o conhecimento.</h2></div>
+                <div class="regras-jogo">
+                    <div><strong>01</strong><span>Corra com ← → ou A/D e pule com ↑, W ou Espaço.</span></div>
+                    <div><strong>02</strong><span>Recupere os nove registros. Cada um representa uma das cientistas estudadas.</span></div>
+                    <div><strong>03</strong><span>Pule sobre os obstáculos vermelhos. Se for atingido, perde uma vida e volta ao último checkpoint.</span></div>
+                    <div><strong>04</strong><span>As molas laranja dão um salto alto e ajudam a alcançar plataformas elevadas.</span></div>
+                    <div><strong>05</strong><span>As estrelas laranja valem 25 pontos. Derrotar um obstáculo pulando nele vale 75 pontos.</span></div>
+                    <div><strong>06</strong><span>São 3 áreas, 60 segundos e 3 vidas. Recupere tudo e chegue à bandeira para concluir.</span></div>
+                </div>
+            </section>
+
+            <!-- Botão para enviar a pessoa do jogo para o feedback. -->
+            <section class="jogo-feedback">
+                <a href="feedback.html" class="botao-feedback-jogo">Gostou da experiência? Deixe seu feedback →</a>
+            </section>
+        </main>
+
+        <footer class="rodape-site">
+            <div>
+                <strong>Mulheres que Fizeram História</strong>
+                <span>MTEC — Ciência Delas</span>
+            </div>
+            <div>
+                <strong>Integrantes</strong>
+                <span>Alexandre Alceu Costa Vale Júnior • Pedro Rodrigues de Oliveira Prates • Guilherme Adolfo Rodrigues Souza</span>
+            </div>
+            <div>
+                <strong>Tema</strong>
+                <span>Mulheres na ciência • 2º TDSA</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

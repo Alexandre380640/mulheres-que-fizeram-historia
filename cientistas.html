@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cientistas | Mulheres que Fizeram História</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="cientistas">
+
+    <button class="botao-ajuda" id="botaoAjuda" aria-label="Abrir ajuda">?</button>
+    <aside class="barra-ajuda" id="barraAjuda">
+        <div class="cabecalho-ajuda"><div><span class="texto-pequeno">MTEC — CIÊNCIA DELAS</span><h2 id="tituloAjuda">Ajuda</h2></div><button class="fechar-ajuda" id="fecharAjuda">×</button></div>
+        <div id="conteudoAjuda"></div>
+    </aside>
+
+    <div class="fundo-site">
+        <header class="cabecalho-site">
+            <a href="inicio.html" class="logo-site"><img src="logo-mtec.png" alt="Logo Ciência Delas"></a>
+            <nav class="menu-site">
+                <a href="inicio.html">Início</a>
+                <a class="ativo" href="cientistas.html">Cientistas</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="jogo.html">Jogo</a>
+                <a href="feedback.html">Feedback</a>
+            </nav>
+            <div class="usuario-menu"><span id="nomeUsuarioMenu">Visitante</span><button id="botaoSair" class="botao-secundario pequeno">Sair</button></div>
+        </header>
+
+        <main>
+            <section class="cabecalho-pagina">
+                <div>
+                    <span class="etiqueta">01 — EXPLORAR</span>
+                    <h1>Mulheres que<br><span>mudaram a ciência.</span></h1>
+                </div>
+                <p>
+                    Conheça nove cientistas de diferentes áreas e descubra como
+                    suas ideias, pesquisas e descobertas contribuíram para o mundo.
+                </p>
+            </section>
+
+            <section class="filtros-cientistas">
+                <button class="filtro ativo" data-filtro="todos">Todas</button>
+                <button class="filtro" data-filtro="fisica">Física</button>
+                <button class="filtro" data-filtro="quimica">Química</button>
+                <button class="filtro" data-filtro="matematica">Matemática</button>
+                <button class="filtro" data-filtro="computacao">Computação</button>
+                <button class="filtro" data-filtro="medicina">Medicina</button>
+            </section>
+
+            <section class="grade-cientistas" id="gradeCientistas"></section>
+
+            <section class="cta-final">
+                <div>
+                    <span class="etiqueta">DEPOIS DE EXPLORAR</span>
+                    <h2>Agora é hora de testar<br>o que você aprendeu.</h2>
+                </div>
+                <a href="quiz.html" class="botao-principal">Ir para o quiz →</a>
+            </section>
+        </main>
+
+        <footer class="rodape-site">
+            <div>
+                <strong>Mulheres que Fizeram História</strong>
+                <span>MTEC — Ciência Delas</span>
+            </div>
+            <div>
+                <strong>Integrantes</strong>
+                <span>Alexandre Alceu Costa Vale Júnior • Pedro Rodrigues de Oliveira Prates • Guilherme Adolfo Rodrigues Souza</span>
+            </div>
+            <div>
+                <strong>Tema</strong>
+                <span>Mulheres na ciência • 2º TDSA</span>
+            </div>
+        </footer>
+    </div>
+
+    <div class="modal-cientista" id="modalCientista">
+        <div class="fundo-modal" id="fundoModal"></div>
+        <article class="conteudo-modal">
+            <button class="fechar-modal" id="fecharModal" aria-label="Fechar perfil">×</button>
+            <div class="modal-cabecalho">
+                <div class="avatar-grande" id="modalAvatar"></div>
+                <div><span class="etiqueta" id="modalArea"></span><h2 id="modalNome"></h2><p id="modalResumo"></p></div>
+            </div>
+            <div class="modal-corpo">
+                <div class="bloco-modal"><span>HISTÓRIA</span><p id="modalBiografia"></p></div>
+                <div class="bloco-modal"><span>PRINCIPAIS CONTRIBUIÇÕES</span><div id="modalContribuicoes"></div></div>
+                <div class="bloco-modal"><span>CURIOSIDADES</span><div id="modalCuriosidades"></div></div>
+                <div class="bloco-modal destaque-legado"><span>LEGADO</span><p id="modalLegado"></p></div>
+            </div>
+        </article>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

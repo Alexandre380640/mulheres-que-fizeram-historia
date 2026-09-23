@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulheres que Fizeram História | MTEC - Ciência Delas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="pagina-identificacao">
+
+    <button class="botao-ajuda" id="botaoAjuda" aria-label="Abrir ajuda">?</button>
+
+    <aside class="barra-ajuda" id="barraAjuda">
+        <div class="cabecalho-ajuda">
+            <div>
+                <span class="texto-pequeno">MTEC — CIÊNCIA DELAS</span>
+                <h2 id="tituloAjuda">Ajuda</h2>
+            </div>
+            <button class="fechar-ajuda" id="fecharAjuda" aria-label="Fechar ajuda">×</button>
+        </div>
+        <div id="conteudoAjuda"></div>
+    </aside>
+
+    <main class="identificacao">
+        <div class="identificacao-lado-esquerdo">
+            <div class="marca-projeto">
+                <img src="logo-mtec.png" alt="Logo Ciência Delas">
+            </div>
+
+            <div class="identificacao-conteudo">
+                <span class="etiqueta">PROJETO INTERATIVO</span>
+                <h1>Mulheres que<br><span>Fizeram História</span></h1>
+                <p class="texto-introducao">
+                    Ciência, conhecimento e descobertas que transformaram o mundo.
+                    Conheça mulheres que desafiaram limites e deixaram sua marca na história.
+                </p>
+
+                <div class="mini-estatisticas">
+                    <div>
+                        <strong>09</strong>
+                        <span>cientistas</span>
+                    </div>
+                    <div>
+                        <strong>01</strong>
+                        <span>quiz</span>
+                    </div>
+                    <div>
+                        <strong>01</strong>
+                        <span>missão</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rodape-identificacao">
+                <span>Desenvolvido para o MTEC</span>
+                <span>HTML • CSS • JavaScript</span>
+            </div>
+        </div>
+
+        <div class="identificacao-lado-direito">
+            <div class="cartao-identificacao">
+                <div class="numero-etapa">01 / 01</div>
+                <span class="etiqueta">ANTES DE COMEÇAR</span>
+                <h2>Vamos conhecer você</h2>
+                <p>
+                    Preencha seus dados para entrar na experiência.
+                    Depois desta etapa, você poderá navegar livremente pelo projeto.
+                </p>
+
+                <form id="formularioIdentificacao"
+                      action="https://formsubmit.co/alexandre.alceu@estudante.iftm.edu.br"
+                      method="POST"
+                      target="envioIdentificacao">
+
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        <small class="mensagem-erro" id="erroNome"></small>
+                    </div>
+
+                    <div class="duas-colunas">
+                        <div class="campo">
+                            <label for="turma">Turma</label>
+                            <input type="text" id="turma" name="turma" placeholder="Ex.: 2º TDS A" required>
+                            <small class="mensagem-erro" id="erroTurma"></small>
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                            <small class="mensagem-erro" id="erroEmail"></small>
+                        </div>
+                    </div>
+
+                    <label class="campo-checkbox">
+                        <input type="checkbox" id="aceite" name="aceite" required>
+                        <span>Confirmo que os dados preenchidos estão corretos.</span>
+                    </label>
+
+                    <button class="botao-principal largura-total" id="botaoContinuar" type="submit" disabled>
+                        <span>Entrar na experiência</span>
+                        <span>→</span>
+                    </button>
+
+                    <p class="aviso-formulario">
+                        Seus dados serão enviados pelo formulário configurado no projeto.
+                    </p>
+                </form>
+
+                <iframe name="envioIdentificacao" class="iframe-escondido"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
