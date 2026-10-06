@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mulheres que Fizeram História | MTEC - Ciência Delas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="pagina-identificacao">
 
@@ -69,8 +69,11 @@
 
                 <form id="formularioIdentificacao"
                       action="https://formsubmit.co/alexandre.alceu@estudante.iftm.edu.br"
-                      method="POST"
-                      target="envioIdentificacao">
+                      data-envio="https://formsubmit.co/ajax/alexandre.alceu@estudante.iftm.edu.br"
+                      method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="Novo visitante - Mulheres que Fizeram História">
 
                     <div class="campo">
                         <label for="nome">Nome completo</label>
@@ -106,12 +109,10 @@
                         Seus dados serão enviados pelo formulário configurado no projeto.
                     </p>
                 </form>
-
-                <iframe name="envioIdentificacao" class="iframe-escondido"></iframe>
             </div>
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
