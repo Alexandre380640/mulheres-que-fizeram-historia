@@ -267,6 +267,30 @@ function configurarSair() {
     });
 }
 
+// Envia o formulário para o FormSubmit sem sair da página e espera a resposta.
+async function enviarFormulario(form) {
+    const url = form.dataset.envio;
+    const controle = new AbortController();
+    const limite = setTimeout(() => controle.abort(), 8000);
+
+    try {
+        const resposta = await fetch(url, {
+            method: "POST",
+            headers: { "Accept": "application/json" },
+            body: new FormData(form),
+            signal: controle.signal
+        });
+        const dados = await resposta.json().catch(() => ({}));
+        console.log("FormSubmit:", resposta.status, dados);
+        return resposta.ok && String(dados.success) !== "false";
+    } catch (erro) {
+        console.error("Falha ao enviar o formulário:", erro);
+        return false;
+    } finally {
+        clearTimeout(limite);
+    }
+}
+
 // Valida o formulário de identificação.
 function configurarIdentificacao() {
     const form = document.getElementById("formularioIdentificacao");
@@ -309,18 +333,18 @@ function configurarIdentificacao() {
     [nome, turma, email, aceite].forEach(campo => campo.addEventListener("input", validar));
     aceite.addEventListener("change", validar);
 
-    form.addEventListener("submit", event => {
+    form.addEventListener("submit", async event => {
         event.preventDefault();
         if (!validar()) return;
 
         salvarIdentificacao(nome.value.trim(), turma.value.trim(), email.value.trim());
 
-        if (form.action.includes("COLE_AQUI")) {
-            window.location.href = "inicio.html";
-        } else {
-            form.submit();
-            setTimeout(() => window.location.href = "inicio.html", 350);
-        }
+        botao.disabled = true;
+        botao.querySelector("span").textContent = "Enviando...";
+
+        // Espera o envio terminar antes de trocar de página (senão o navegador cancela o pedido).
+        await enviarFormulario(form);
+        window.location.href = "inicio.html";
     });
 }
 
@@ -1245,11 +1269,20 @@ function configurarFeedback() {
         botao.disabled = !(form.checkValidity() && nota.value !== "");
     }
 
-    form.addEventListener("submit", event => {
+    form.addEventListener("submit", async event => {
         event.preventDefault();
         if (!form.checkValidity() || nota.value === "") return;
 
-        if (!form.action.includes("COLE_AQUI")) form.submit();
+        botao.disabled = true;
+        botao.firstChild.textContent = "Enviando... ";
+
+        const enviado = await enviarFormulario(form);
+        if (!enviado) {
+            botao.disabled = false;
+            botao.firstChild.textContent = "Enviar feedback ";
+            alert("Não foi possível enviar o feedback agora. Verifique a internet e tente novamente.");
+            return;
+        }
 
         // Depois do envio, deixamos somente a mensagem de agradecimento.
         document.querySelector(".area-feedback .cabecalho-pagina").classList.add("escondido");
