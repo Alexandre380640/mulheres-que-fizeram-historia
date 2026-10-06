@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback | Mulheres que Fizeram História</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-pagina="feedback">
 
@@ -51,8 +51,11 @@
                 <div class="cartao-formulario">
                     <form id="formularioFeedback"
                           action="https://formsubmit.co/alexandre.alceu@estudante.iftm.edu.br"
-                          method="POST"
-                          target="envioFeedback">
+                      data-envio="https://formsubmit.co/ajax/alexandre.alceu@estudante.iftm.edu.br"
+                      method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="Novo feedback - Mulheres que Fizeram História">
 
                         <div class="campo">
                             <label for="nota">Como você avalia o projeto?</label>
@@ -101,7 +104,6 @@
                             Enviar feedback <span>→</span>
                         </button>
                     </form>
-                    <iframe name="envioFeedback" class="iframe-escondido"></iframe>
                 </div>
             </section>
 
@@ -121,7 +123,7 @@
             </div>
             <div>
                 <strong>Integrantes</strong>
-                <span>Alexandre Alceu Costa Vale Júnior • Pedro Rodrigues de Oliveira Prates • Guilherme Adolfo Rodrigues Souza</span>
+                <span>Alexandre Alceu Costa Valle Júnior • Pedro Rodrigues de Oliveira Prates • Guilherme Adolfo Rodrigues Souza</span>
             </div>
             <div>
                 <strong>Tema</strong>
@@ -130,6 +132,6 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
